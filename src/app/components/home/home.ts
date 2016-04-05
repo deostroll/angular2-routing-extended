@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {NavComponent, NavSense} from './../../services/navigation';
 
 @Component({
   selector: 'home',
@@ -8,9 +9,11 @@ import {Component} from 'angular2/core';
   directives: [],
   pipes: []
 })
-export class Home {
+export class Home extends NavComponent{
 
-  constructor() {}
+  constructor(nav: NavSense) {
+    super(nav, "Home");
+  }
 
   ngOnInit() {
 

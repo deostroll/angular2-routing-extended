@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {Http} from 'angular2/http';
-
+import {NavComponent, NavSense} from './../../services/navigation';
 
 @Component({
   selector: 'about',
@@ -10,10 +10,10 @@ import {Http} from 'angular2/http';
   directives: [],
   pipes: []
 })
-export class About {
+export class About extends NavComponent{
 
-  constructor(http: Http) {
-
+  constructor(http: Http, nav: NavSense) {
+    super(nav, "About");
   }
 
   ngOnInit() {
